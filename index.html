@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birtaneme🫰🏿</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #f7a8c9, #ffeaf3);
+    overflow: hidden;
+}
+
+.kalp {
+    position: fixed;
+    font-size: 28px;
+    animation: dus 6s linear infinite;
+    opacity: .7;
+}
+
+@keyframes dus {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(110vh); }
+}
+
+.kutu {
+    width: 85%;
+    max-width: 450px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,.92);
+    border-radius: 30px;
+    box-shadow: 0 10px 35px rgba(200,70,130,.25);
+}
+
+h1 {
+    color: #d94f86;
+    font-size: 27px;
+}
+
+p {
+    color: #777;
+}
+
+button {
+    border: none;
+    padding: 14px 24px;
+    margin: 8px;
+    border-radius: 25px;
+    background: #f184b2;
+    color: white;
+    font-size: 17px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="kalp" style="left:10%">💗</div>
+<div class="kalp" style="left:35%;animation-delay:2s">💕</div>
+<div class="kalp" style="left:65%;animation-delay:1s">💗</div>
+<div class="kalp" style="left:85%;animation-delay:3s">💖</div>
+
+<div class="kutu">
+    <h1 id="soru">Ağlamıcaksın tamam mı?</h1>
+    <p id="alt">💗</p>
+
+    <div id="butonlar">
+        <button onclick="sonraki()">Tamam 🥰</button>
+        <button onclick="sonraki()">Tamam 🥰</button>
+    </div>
+</div>
+
+<script>
+let sayac = 1;
+
+function sonraki() {
+
+    if (sayac === 1) {
+        document.getElementById("soru").innerHTML = "Söz mü?";
+        document.getElementById("alt").innerHTML = "🫰🏿";
+
+        document.getElementById("butonlar").innerHTML =
+        '<button onclick="sonraki()">Söz 🥰</button>' +
+        '<button onclick="sonraki()">Söz 🥰</button>';
+
+        sayac = 2;
+
+    } else if (sayac === 2) {
+        document.getElementById("soru").innerHTML =
+        "Birtanemi çok seviyorum biliyor musun?";
+
+        document.getElementById("alt").innerHTML = "🤍";
+
+        document.getElementById("butonlar").innerHTML =
+        '<button onclick="sonraki()">Biliyorum 🤍</button>' +
+        '<button onclick="sonraki()">Biliyorum 🤍</button>';
+
+        sayac = 3;
+
+    } else {
+        document.getElementById("soru").innerHTML =
+        "Çok seviyorum seni 🫰🏿🤍";
+
+        document.getElementById("alt").innerHTML = "💗";
+
+        document.getElementById("butonlar").innerHTML =
+        '<div style="font-size:45px">💗 🫰🏿 🤍 🫰🏿 💗</div>';
+    }
+}
+</script>
+
+</body>
+  </html>
